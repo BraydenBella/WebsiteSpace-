@@ -28,7 +28,6 @@
     <div class="game-section">
         <span> 
             <img src="./img/play-overlay.png" alt="playoverlay" class="overlay">
-            <button class="close-btn" id="closeButton">Close</button>
         </span>
         <img src="./img/final-game-screen.png" alt="game section" class="game-image">
     </div>
@@ -52,24 +51,6 @@ function handleScroll() {
 
 window.addEventListener("scroll", handleScroll);
 
-const playButton = document.getElementById("playButton");
-const overlay = document.getElementById("overlay");
-const closeButton = document.getElementById("closeButton");
-
-playButton.addEventListener("click", () => {
-    overlay.style.display = "block";
-});
-
-closeButton.addEventListener("click", () => {
-    overlay.style.display = "none";
-});
-
-// Close overlay when clicking outside the image
-overlay.addEventListener("click", (e) => {
-    if (e.target === overlay) {
-        overlay.style.display = "none";
-    }
-});
 
 
 </script>
