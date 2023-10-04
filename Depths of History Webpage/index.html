@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Depths of History</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+    <div class="navbar" id="navbar">
+        <img src="./img/logo-img.png" alt="Depths of History Logo">
+    
+        <a href="">About</a>
+        <a href="" class="game-link">The Game</a>
+        <a href="">Store</a>
+        <a href="">Partnerships</a>
+
+
+
+        <span class="right">
+            <button class="Play-btn"> Play or Free</button>
+        </span>
+            
+        
+    </div>
+<!-- navigation bar section closes here -->
+    <div class="game-section">
+        <span> 
+            <img src="./img/play-overlay.png" alt="playoverlay" class="overlay">
+            <button class="close-btn" id="closeButton">Close</button>
+        </span>
+        <img src="./img/final-game-screen.png" alt="game section" class="game-image">
+    </div>
+
+    
+</body>
+
+<script>
+
+const navbar = document.getElementById("navbar");
+
+
+function handleScroll() {
+    if (window.scrollY > 0) {
+        navbar.classList.add("transparent");
+    } else {
+        navbar.classList.remove("transparent");
+    }
+}
+
+
+window.addEventListener("scroll", handleScroll);
+
+const playButton = document.getElementById("playButton");
+const overlay = document.getElementById("overlay");
+const closeButton = document.getElementById("closeButton");
+
+playButton.addEventListener("click", () => {
+    overlay.style.display = "block";
+});
+
+closeButton.addEventListener("click", () => {
+    overlay.style.display = "none";
+});
+
+// Close overlay when clicking outside the image
+overlay.addEventListener("click", (e) => {
+    if (e.target === overlay) {
+        overlay.style.display = "none";
+    }
+});
+
+
+</script>
+</html>
